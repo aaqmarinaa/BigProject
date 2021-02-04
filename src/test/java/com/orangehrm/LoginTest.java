@@ -43,6 +43,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(invalidCredentials.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else
@@ -62,6 +63,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(invalidCredentials.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else
@@ -81,6 +83,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(invalidCredentials.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else
@@ -100,6 +103,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(blankPassword.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else
@@ -119,6 +123,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(blankUsername.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else
@@ -138,6 +143,7 @@ public class LoginTest {
         login.clickButtonLogin();
         login.userSeeErrorMessage();
         String textErrorMessage = driver.findElement(By.xpath("//*[@id='spanMessage']")).getText();
+//        String textErrorMessage = login.userReadErrorMessage();
         if(blankUsername.equals(textErrorMessage))
             System.out.println("The Error message is same as expected -> " +textErrorMessage);
         else

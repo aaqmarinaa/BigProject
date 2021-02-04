@@ -28,6 +28,12 @@ public class BasePage {
         WebElement element = driver.findElement(by);
         return by;
     }
+
+    public static By getElementText(By by) throws InterruptedException {
+        Thread.sleep(100);
+        String text = driver.findElement(by).getText();
+        return by;
+    }
 }
 
 /*
