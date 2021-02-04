@@ -4,51 +4,86 @@ import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Admin;
 import com.sekolahqa.pages.Login;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 
 public class AdminTest {
     WebDriver driver = Utils.getDriver();
+    Login login = new Login(driver);
+    Admin admin = new Admin(driver);
+
+    private String usernameAlreadyExists = "Already exists";
+    private String wrongConfirmPassword = "Passwords do not match";
 
     public AdminTest() throws IOException {
     }
 
+    // add Employee with Valid data
     @Test
     public void addEmployee() throws InterruptedException {
     Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
-    Login login = new Login(driver);
-    Admin admin = new Admin(driver);
+    Utils.maximizeWindow();
 
     login.inputUsername("Admin");
     login.inputPassword("s3Kol4HQA!*");
     login.clickButtonLogin();
     admin.clickButtonAdmin();
     admin.clickButtonAddEmployee();
-    admin.inputEmployeeName("Muhammad Ariansyah Riwendi");
-    admin.inputUsername("ariansyah9");
-    admin.inputPassword("s3Kol4HQA!*");
-    admin.inputConfirmPassword("s3Kol4HQA!*");
+    admin.inputEmployeeName("Almas Aqmarina");
+    admin.inputUsername("aaqmarinaa1");
+    admin.inputPassword("Aqmarina18@");
+    admin.inputConfirmPassword("Aqmarina18@");
     admin.clickButtonSave();
+    Utils.closeWebsite();
     }
 
+    // add Employee with Existing Username
     @Test
     public void addEmployeeWithExistingUsername() throws InterruptedException {
         Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
-        Login login = new Login(driver);
-        Admin admin = new Admin(driver);
+        Utils.maximizeWindow();
 
         login.inputUsername("Admin");
         login.inputPassword("s3Kol4HQA!*");
         login.clickButtonLogin();
         admin.clickButtonAdmin();
         admin.clickButtonAddEmployee();
-        admin.inputEmployeeName("Muhammad Ariansyah Riwendi");
-        admin.inputUsername("ariansyah9");
-        admin.inputPassword("s3Kol4HQA!*");
-        admin.inputConfirmPassword("s3Kol4HQA!*");
+        admin.inputEmployeeName("Almas Aqmarina");
+        admin.inputUsername("aaqmarinaa");
+        admin.inputPassword("Aqmarina18@");
+        admin.inputConfirmPassword("Aqmarina18@");
         admin.clickButtonSave();
         admin.errorMessageUsernameAlreadyExist();
+        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[3]/span")).getText();
+        if (usernameAlreadyExists.equals(textErrorMessage))
+            System.out.println("The Error message is same as expected -> "+textErrorMessage);
+        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
+        Utils.closeWebsite();
     }
 
+    // add Employee With Wrong Confirm Password
+    @Test
+    public void addEmployeeWithWrongConfirmPassword() throws InterruptedException {
+        Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
+        Utils.maximizeWindow();
+
+        login.inputUsername("Admin");
+        login.inputPassword("s3Kol4HQA!*");
+        login.clickButtonLogin();
+        admin.clickButtonAdmin();
+        admin.clickButtonAddEmployee();
+        admin.inputEmployeeName("Almas Aqmarina");
+        admin.inputUsername("aaqmarinaa2");
+        admin.inputPassword("Aqmarina18@");
+        admin.inputConfirmPassword("Aqmarina1@");
+        admin.clickButtonSave();
+        admin.errorMessageConfirmPasswordWrong();
+        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[7]/span")).getText();
+        if (wrongConfirmPassword.equals(textErrorMessage))
+            System.out.println("The Error message is same as expected -> "+textErrorMessage);
+        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
+        Utils.closeWebsite();
+    }
 }
