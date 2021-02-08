@@ -13,6 +13,7 @@ public class AdminTest {
     WebDriver driver = Utils.getDriver();
     Login login = new Login(driver);
     Admin admin = new Admin(driver);
+    LoginTest logintest = new LoginTest(driver);
 
     private String usernameAlreadyExists = "Already exists";
     private String wrongConfirmPassword = "Passwords do not match";
@@ -23,31 +24,21 @@ public class AdminTest {
     // add Employee with Valid data
     @Test
     public void addEmployee() throws InterruptedException {
-    Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
-    Utils.maximizeWindow();
-
-    login.inputUsername("Admin");
-    login.inputPassword("s3Kol4HQA!*");
-    login.clickButtonLogin();
-    admin.clickButtonAdmin();
-    admin.clickButtonAddEmployee();
-    admin.inputEmployeeName("Almas Aqmarina");
-    admin.inputUsername("aaqmarinaa1");
-    admin.inputPassword("Aqmarina18@");
-    admin.inputConfirmPassword("Aqmarina18@");
-    admin.clickButtonSave();
-    Utils.closeWebsite();
+        logintest.LoginWithValidFormatAdmin();
+        admin.clickButtonAdmin();
+        admin.clickButtonAddEmployee();
+        admin.inputEmployeeName("Almas Aqmarina");
+        admin.inputUsername("aaqmarinaa1");
+        admin.inputPassword("Aqmarina18@");
+        admin.inputConfirmPassword("Aqmarina18@");
+        admin.clickButtonSave();
+        Utils.closeWebsite();
     }
 
     // add Employee with Existing Username
     @Test
     public void addEmployeeWithExistingUsername() throws InterruptedException {
-        Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
-        Utils.maximizeWindow();
-
-        login.inputUsername("Admin");
-        login.inputPassword("s3Kol4HQA!*");
-        login.clickButtonLogin();
+        logintest.LoginWithValidFormatAdmin();
         admin.clickButtonAdmin();
         admin.clickButtonAddEmployee();
         admin.inputEmployeeName("Almas Aqmarina");
@@ -66,12 +57,7 @@ public class AdminTest {
     // add Employee With Wrong Confirm Password
     @Test
     public void addEmployeeWithWrongConfirmPassword() throws InterruptedException {
-        Utils.openWebsite("https://qa.cilsy.id/symfony/web/index.php/auth/login");
-        Utils.maximizeWindow();
-
-        login.inputUsername("Admin");
-        login.inputPassword("s3Kol4HQA!*");
-        login.clickButtonLogin();
+        logintest.LoginWithValidFormatAdmin();
         admin.clickButtonAdmin();
         admin.clickButtonAddEmployee();
         admin.inputEmployeeName("Almas Aqmarina");

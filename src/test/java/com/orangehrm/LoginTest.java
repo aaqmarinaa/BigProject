@@ -15,7 +15,7 @@ public class LoginTest {
     private String invalidCredentials = "Invalid credentials";
     private String blankPassword = "Password cannot be empty";
 
-    public LoginTest() throws IOException {
+    public LoginTest(WebDriver driver) throws IOException {
     }
 
     // Login with valid username and  valid password
@@ -28,7 +28,7 @@ public class LoginTest {
         login.inputPassword("s3Kol4HQA!*");
         login.clickButtonLogin();
         login.userSeeDashboardPage();
-        Utils.closeWebsite();
+//        Utils.closeWebsite();
     }
 
     // Login with valid username and  invalid password
@@ -137,6 +137,18 @@ public class LoginTest {
         else
             System.out.println("The Error message doesn't match ->" +textErrorMessage);
         Utils.closeWebsite();
+    }
+
+    // login with employee account
+    @Test
+    public void LoginWithEmployeeAccount() throws InterruptedException {
+        Utils.openWebsite("https://qa.cilsy.id/");
+        Utils.maximizeWindow();
+        login.userSeeLoginPage();
+        login.inputUsername("aaqmarinaa");
+        login.inputPassword("Aqmarina18@");
+        login.clickButtonLogin();
+        login.userSeeDashboardPage();
     }
 }
 
