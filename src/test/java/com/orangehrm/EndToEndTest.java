@@ -4,7 +4,7 @@ import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Admin;
 import com.sekolahqa.pages.Login;
 import com.sekolahqa.pages.Logout;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

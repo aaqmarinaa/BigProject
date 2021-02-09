@@ -2,8 +2,7 @@ package com.orangehrm;
 
 import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Admin;
-import com.sekolahqa.pages.Login;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,9 +10,8 @@ import java.io.IOException;
 
 public class AdminTest {
     WebDriver driver = Utils.getDriver();
-    Login login = new Login(driver);
     Admin admin = new Admin(driver);
-    LoginTest logintest = new LoginTest(driver);
+    LoginTest logintest = new LoginTest();
 
     private String usernameAlreadyExists = "Already exists";
     private String wrongConfirmPassword = "Passwords do not match";

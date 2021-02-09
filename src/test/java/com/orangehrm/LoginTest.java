@@ -2,7 +2,7 @@ package com.orangehrm;
 
 import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Login;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class LoginTest {
     private String invalidCredentials = "Invalid credentials";
     private String blankPassword = "Password cannot be empty";
 
-    public LoginTest(WebDriver driver) throws IOException {
+    public LoginTest() throws IOException {
     }
 
     // Login with valid username and  valid password
