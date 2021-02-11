@@ -26,7 +26,7 @@ public class AdminTest {
         admin.clickButtonAdmin();
         admin.clickButtonAddEmployee();
         admin.inputEmployeeName("Almas Aqmarina");
-        admin.inputUsername("aaqmarinaa1");
+        admin.inputUsername("aaqmarinaa5");
         admin.inputPassword("Aqmarina18@");
         admin.inputConfirmPassword("Aqmarina18@");
         admin.clickButtonSave();
@@ -45,10 +45,10 @@ public class AdminTest {
         admin.inputConfirmPassword("Aqmarina18@");
         admin.clickButtonSave();
         admin.errorMessageUsernameAlreadyExist();
-        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[3]/span")).getText();
-        if (usernameAlreadyExists.equals(textErrorMessage))
-            System.out.println("The Error message is same as expected -> "+textErrorMessage);
-        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
+//        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[3]/span")).getText();
+//        if (usernameAlreadyExists.equals(textErrorMessage))
+//            System.out.println("The Error message is same as expected -> "+textErrorMessage);
+//        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
         Utils.closeWebsite();
     }
 
@@ -64,10 +64,10 @@ public class AdminTest {
         admin.inputConfirmPassword("Aqmarina1@");
         admin.clickButtonSave();
         admin.errorMessageConfirmPasswordWrong();
-        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[7]/span")).getText();
-        if (wrongConfirmPassword.equals(textErrorMessage))
-            System.out.println("The Error message is same as expected -> "+textErrorMessage);
-        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
+//        String textErrorMessage = driver.findElement(By.xpath("//*[@id=\"frmSystemUser\"]/fieldset/ol/li[7]/span")).getText();
+//        if (wrongConfirmPassword.equals(textErrorMessage))
+//            System.out.println("The Error message is same as expected -> "+textErrorMessage);
+//        else System.out.println("The Error message isn't same as expected -> "+textErrorMessage);
         Utils.closeWebsite();
     }
 }

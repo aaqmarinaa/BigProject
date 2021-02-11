@@ -12,8 +12,10 @@ import java.io.IOException;
 
 public class EndToEndTest {
     WebDriver driver = Utils.getDriver();
-    Login login = new Login(driver);
-    Admin admin = new Admin(driver);
+    LoginTest loginTest = new LoginTest();
+    AdminTest adminTest = new AdminTest();
+    AttendanceTest attendanceTest = new AttendanceTest();
+    LeaveTest leaveTest = new LeaveTest();
     Logout logout = new Logout(driver);
 
     public EndToEndTest() throws IOException{
@@ -21,28 +23,15 @@ public class EndToEndTest {
 
     // login with admin
     @Test
-    public void LoginWithValidFormatAdmin() throws InterruptedException {
-        Utils.openWebsite("https://qa.cilsy.id/");
-        Utils.maximizeWindow();
-        login.userSeeLoginPage();
-        login.inputUsername("Admin");
-        login.inputPassword("s3Kol4HQA!*");
-        login.clickButtonLogin();
-        login.userSeeDashboardPage();
-
-        admin.clickButtonAdmin();
-        admin.clickButtonAddEmployee();
-        admin.inputEmployeeName("Almas Aqmarina");
-        admin.inputUsername("aaqmarinaa3");
-        admin.inputPassword("Aqmarina18@");
-        admin.inputConfirmPassword("Aqmarina18@");
-        admin.clickButtonSave();
-
+    public void OneBisnisFlowTest() throws InterruptedException {
+        loginTest.LoginWithValidFormatAdmin();
+        adminTest.addEmployee();
         logout.userClickProfile();
         logout.userClickLogout();
-
-        login.inputUsername("aaqmarinaa");
-        login.inputPassword("Aqmarina18@");
-
+        loginTest.LoginWithEmployeeAccount();
+        attendanceTest.punchIn();
+        leaveTest.applyLeaveFromEmployee();
+        logout.userClickProfile();
+        logout.userClickLogout();
     }
 }

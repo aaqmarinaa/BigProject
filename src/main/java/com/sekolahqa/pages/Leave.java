@@ -61,6 +61,7 @@ public class Leave extends BasePage {
 
     public void inputAssignToDateLeave(String toDate) throws InterruptedException {
         clickButton(toDateLabelAssign);
+        clickButton(toDateAssignLeave);
         inputText(toDateAssignLeave, toDate);
     }
 
@@ -70,6 +71,7 @@ public class Leave extends BasePage {
     }
     public void inputApplyToDateLeave(String toDate) throws InterruptedException {
         clickButton(toDateLabelApply);
+        clickButton(toDateApplyLeave);
         inputText(toDateApplyLeave, toDate);
     }
 
