@@ -31,8 +31,6 @@ public class LeaveTest {
         Thread.sleep(300);
         leave.inputAssignFromDateLeave("2021-03-22");
         Thread.sleep(300);
-        leave.inputAssignToDateLeave("2021-03-23");
-        Thread.sleep(300);
         leave.clickAssignButton();
     }
 
@@ -44,7 +42,6 @@ public class LeaveTest {
         leave.clickApplyLeave();
         leave.setSelectApplyLeaveType("Cuti");
         leave.inputApplyFromDateLeave("2021-04-15");
-        leave.inputApplyToDateLeave("2021-04-16");
         leave.clickApplyButton();
     }
 }
