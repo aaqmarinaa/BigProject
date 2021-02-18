@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
+  <test thread-count="5" name="sekolahqa(failed)">
+    <classes>
+      <class name="com.orangehrm.LoginTest">
+        <methods>
+          <include name="LoginWithBlankUsername"/>
+          <include name="LoginWithEmployeeAccount"/>
+          <include name="LoginWithInvalidUsername"/>
+          <include name="LoginWithBlankPassword"/>
+          <include name="LoginWithValidFormatAdmin"/>
+          <include name="LoginWithInvalidData"/>
+          <include name="LoginWithInvalidPassword"/>
+        </methods>
+      </class> <!-- com.orangehrm.LoginTest -->
+    </classes>
+  </test> <!-- sekolahqa(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

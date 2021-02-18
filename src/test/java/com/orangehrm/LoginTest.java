@@ -2,9 +2,12 @@ package com.orangehrm;
 
 import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Login;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import java.io.IOException;
 
 public class LoginTest {
@@ -142,14 +145,24 @@ public class LoginTest {
     // login with employee account
     @Test
     public void LoginWithEmployeeAccount() throws InterruptedException {
-//        Utils.openWebsite("https://qa.cilsy.id/");
-//        Utils.maximizeWindow();
+        Utils.openWebsite("https://qa.cilsy.id/");
+        Utils.maximizeWindow();
         login.userSeeLoginPage();
         login.inputUsername("aaqmarinaa");
         login.inputPassword("Aqmarina18@");
         login.clickButtonLogin();
         login.userSeeDashboardPage();
     }
+
+//    @BeforeMethod
+//    public void beforeMethod() {
+//        System.out.println("Starting Test On Chrome Browser");
+//    }
+//
+//    @AfterMethod
+//    public void afterMethod() {
+//        System.out.println("Finished Test On Chrome Browser");
+//    }
 }
 
 

@@ -4,9 +4,9 @@ import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Admin;
 import com.sekolahqa.pages.Login;
 import com.sekolahqa.pages.Logout;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 

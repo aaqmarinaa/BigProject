@@ -2,8 +2,8 @@ package com.orangehrm;
 
 import com.sekolahqa.config.Utils;
 import com.sekolahqa.pages.Attendance;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 
