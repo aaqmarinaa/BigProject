@@ -142,8 +142,8 @@ public class LoginTest {
     // login with employee account
     @Test
     public void LoginWithEmployeeAccount() throws InterruptedException {
-        Utils.openWebsite("https://qa.cilsy.id/");
-        Utils.maximizeWindow();
+//        Utils.openWebsite("https://qa.cilsy.id/");
+//        Utils.maximizeWindow();
         login.userSeeLoginPage();
         login.inputUsername("aaqmarinaa");
         login.inputPassword("Aqmarina18@");

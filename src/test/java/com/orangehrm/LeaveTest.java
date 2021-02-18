@@ -37,7 +37,7 @@ public class LeaveTest {
     // Employee apply leave
     @Test
     public void applyLeaveFromEmployee() throws InterruptedException {
-        loginTest.LoginWithEmployeeAccount();
+//        loginTest.LoginWithEmployeeAccount();
         leave.clickMenuLeave();
         leave.clickApplyLeave();
         leave.setSelectApplyLeaveType("Cuti");

@@ -17,7 +17,7 @@ public class AttendanceTest {
 
     @Test
     public void punchIn() throws InterruptedException {
-        logintest.LoginWithEmployeeAccount();
+//        logintest.LoginWithEmployeeAccount();
         attendance.clickButtonTime();
         attendance.clickButtonPunchIn();
         attendance.inputNote("test in 1");

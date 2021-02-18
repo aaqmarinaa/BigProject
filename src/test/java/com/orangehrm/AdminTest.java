@@ -22,7 +22,7 @@ public class AdminTest {
     // add Employee with Valid data
     @Test
     public void addEmployee() throws InterruptedException {
-        logintest.LoginWithValidFormatAdmin();
+//        logintest.LoginWithValidFormatAdmin();
         admin.clickButtonAdmin();
         admin.clickButtonAddEmployee();
         admin.inputEmployeeName("Almas Aqmarina");
